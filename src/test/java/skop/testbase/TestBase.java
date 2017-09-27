@@ -41,7 +41,7 @@ public class TestBase extends ActionsUtility {
 	}
 
 	public void launchBrowser(String browser) throws Throwable {
-		System.out.println(System.getProperty("os.name"));
+		System.out.println("OS is: "+System.getProperty("os.name")+" And Browser is: "+browser);
 		if (System.getProperty("os.name").contains("Windows 10")) {
 			if (browser.equalsIgnoreCase("firefox")) {
 				System.setProperty("webdriver.firefox.marionette",
@@ -58,19 +58,18 @@ public class TestBase extends ActionsUtility {
 				options.addArguments("disable-infobars");
 				driver = new ChromeDriver(options);
 			}
-		} else if (System.getProperty("os.name").contains("linux"))
+		} else if (System.getProperty("os.name").contains("Linux"))
 			if (browser.equalsIgnoreCase("chrome")) {
 				System.setProperty("webdriver.chrome.driver",
 						System.getProperty("user.dir") + "/src/test/resources/drivers/chromedriver");
-				// loggers.info("Operating System: Linux And Browser : Chrome");
+				System.out.println("Launching chrome browser on linux....");
 				ChromeOptions options = new ChromeOptions();
 				options.addArguments("disable-infobars");
 				driver = new ChromeDriver(options);
 			} else if (browser.equalsIgnoreCase("firefox")) {
 				System.setProperty("webdriver.firefox.marionette",
 						System.getProperty("user.dir") + "/src/test/resources/drivers/geckodriver");
-				// loggers.info("Operating System: Linux And Browser :
-				// Firefox");
+				System.out.println("Launching firefox browser on linux....");
 				driver = new FirefoxDriver();
 			}
 	}
