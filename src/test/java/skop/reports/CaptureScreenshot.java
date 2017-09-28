@@ -23,7 +23,7 @@ public class CaptureScreenshot extends ExcelUtils {
     {
         TakesScreenshot ts = (TakesScreenshot)driver;
         File source = ts.getScreenshotAs(OutputType.FILE);
-        String dest = System.getProperty("user.dir") +"/src/test/resources/reports/InterfaceScreenshots/"+screenShotName+".png";
+        String dest = System.getProperty("user.dir") +"/src/test/resources/reports/"+screenShotName+".png";
         File destination = new File(dest);
         FileUtils.copyFile(source, destination);                           
         return dest;
