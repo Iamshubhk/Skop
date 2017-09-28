@@ -56,6 +56,7 @@ public class TestBase extends ActionsUtility {
 				// Chrome");
 				ChromeOptions options = new ChromeOptions();
 				options.addArguments("disable-infobars");
+				options.addArguments("window-size=1920,1080");
 				driver = new ChromeDriver(options);
 			}
 		} else if (System.getProperty("os.name").contains("Linux"))
@@ -64,6 +65,7 @@ public class TestBase extends ActionsUtility {
 				System.out.println("Launching chrome browser on linux....");
 				ChromeOptions options = new ChromeOptions();
 				options.addArguments("disable-infobars");
+				options.addArguments("window-size=1920,1080");
 				driver = new ChromeDriver(options);
 			} else if (browser.equalsIgnoreCase("firefox")) {
 				System.setProperty("webdriver.firefox.marionette",

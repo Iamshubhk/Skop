@@ -1,5 +1,6 @@
 package skop.tests;
 
+import java.io.IOException;
 import java.net.URL;
 
 import org.testng.ITestResult;
@@ -15,12 +16,12 @@ import skop.pages.Login;
 import skop.testbase.TestBase;
 
 public class SKOP_URL_Verification extends TestBase {
-
+	public String testcasename;
 	
 
 	@BeforeSuite
 	public void setupAndLogin() throws Throwable {
-		String testcasename = "SKOP_Login";
+		testcasename = "SKOP_Login";
 		init();
 		Login logobj = new Login(driver);
 		logobj.doLogin();
@@ -32,7 +33,7 @@ public class SKOP_URL_Verification extends TestBase {
 
 	@Test(priority=0)
 	public void CheckHomeURL() throws Throwable {
-		String testcasename = "TC_01_URL_Home";
+		testcasename = "TC_01_URL_Home";
 		extent = getExtent();
 		loggers = startTest(testcasename);
 		CommonObjectsRepo commonOR = new CommonObjectsRepo(driver);
@@ -52,7 +53,7 @@ public class SKOP_URL_Verification extends TestBase {
 	
 	@Test(priority=1)
 	public void checkmyProfileURL() throws Throwable {
-		String testcasename = "TC_02_URL_My_Profile";
+		testcasename = "TC_02_URL_My_Profile";
 		extent = getExtent();
 		loggers = startTest(testcasename);
 		CommonObjectsRepo commonOR = new CommonObjectsRepo(driver);
@@ -74,7 +75,7 @@ public class SKOP_URL_Verification extends TestBase {
 	@Test(priority=2)
 	public void checkchangePasswordURL() throws Throwable {
 		
-		String testcasename = "TC_03_URL_ChangePassword";
+		testcasename = "TC_03_URL_ChangePassword";
 		extent = getExtent();
 		loggers = startTest(testcasename);
 		
@@ -97,7 +98,7 @@ public class SKOP_URL_Verification extends TestBase {
 	@Test(priority=3)
 	public void checkTeamURL() throws Throwable {
 		
-		String testcasename = "TC_04_URL_Team";
+		testcasename = "TC_04_URL_Team";
 		extent = getExtent();
 		loggers = startTest(testcasename);
 		
@@ -121,7 +122,7 @@ public class SKOP_URL_Verification extends TestBase {
 	@Test(priority=4)
 	public void checkTeamRolesUrl() throws Throwable {
 		
-		String testcasename = "TC_05_URL_TeamRoles";
+		testcasename = "TC_05_URL_TeamRoles";
 		extent = getExtent();
 		loggers = startTest(testcasename);
 		
@@ -144,7 +145,7 @@ public class SKOP_URL_Verification extends TestBase {
 	@Test(priority=5)
 	public void checkOutcomeConfigUrl() throws Throwable {
 		
-		String testcasename = "TC_06_URL_Outcome_Config";
+		testcasename = "TC_06_URL_Outcome_Config";
 		extent = getExtent();
 		loggers = startTest(testcasename);
 		
@@ -167,7 +168,7 @@ public class SKOP_URL_Verification extends TestBase {
 	@Test(priority=6)
 	public void check_cat_li_sets_Url() throws Throwable {
 		
-		String testcasename = "TC_07_URL_check_cat_li_sets_Url";
+		testcasename = "TC_07_URL_check_cat_li_sets_Url";
 		extent = getExtent();
 		loggers = startTest(testcasename);
 		
@@ -191,7 +192,7 @@ public class SKOP_URL_Verification extends TestBase {
 	@Test(priority=7)
 	public void selection_Groups_Url() throws Throwable {
 		
-		String testcasename = "TC_08_URL_selection_Groups_Url";
+		testcasename = "TC_08_URL_selection_Groups_Url";
 		extent = getExtent();
 		loggers = startTest(testcasename);
 		
@@ -213,7 +214,12 @@ public class SKOP_URL_Verification extends TestBase {
 	}
 	@AfterMethod
 	public void tearDown(ITestResult result) {
-		endTest(result);
+		try {
+			endTest(driver,testcasename,result);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		extent.flush();
 	}
 
