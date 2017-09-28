@@ -200,7 +200,7 @@ public class TestBase extends ActionsUtility {
 	 */
 	public void checkObjectIsDisplayed(WebElement element) {
 
-		int NUMBER_OF_WAITS = 5;
+		int NUMBER_OF_WAITS = 1;
 		int count = 0;
 		boolean elementIsDisplayed = false;
 		do {
