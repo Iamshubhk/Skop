@@ -23,7 +23,7 @@ public class ExtentFactory extends CaptureScreenshot {
 	public static String screenShotPath;
 
 	public static ExtentHtmlReporter getHtmlReporter() {
-		String reportPath = System.getProperty("user.dir")+"/src/test/resources/reports/SkopReports.html";
+		String reportPath = System.getProperty("user.dir")+"/ExtentReports/ReportAndScreenshot/SkopReports.html";
 		htmlReporter = new ExtentHtmlReporter(reportPath);
 		htmlReporter.config().setDocumentTitle("TrailLink Automation Test Report");
 		htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);

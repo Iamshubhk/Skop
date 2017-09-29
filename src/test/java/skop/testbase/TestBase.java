@@ -56,7 +56,7 @@ public class TestBase extends ActionsUtility {
 				// Chrome");
 				ChromeOptions options = new ChromeOptions();
 				options.addArguments("disable-infobars");
-				options.addArguments("window-size=1920,1080");
+				options.addArguments("window-size=1280,1024");
 				driver = new ChromeDriver(options);
 			}
 		} else if (System.getProperty("os.name").contains("Linux"))

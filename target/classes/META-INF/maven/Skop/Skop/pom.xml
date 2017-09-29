@@ -50,7 +50,7 @@
             <configuration>
                 <filesets>
                     <fileset>
-                        <directory>${basedir}/src/test/resources/reports</directory>
+                        <directory>${basedir}/ExtentReports/ReportAndScreenshot/</directory>
                         <includes>
                             <include>**/*</include>
                         </includes>

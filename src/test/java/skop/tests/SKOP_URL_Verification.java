@@ -51,7 +51,7 @@ public class SKOP_URL_Verification extends TestBase {
 
 	}
 	
-	/*@Test(priority=1)
+	@Test(priority=1)
 	public void checkmyProfileURL() throws Throwable {
 		testcasename = "TC_02_URL_My_Profile";
 		extent = getExtent();
@@ -211,7 +211,8 @@ public class SKOP_URL_Verification extends TestBase {
 		commonOR.selection_Groups_onBoard();
 		commonOR.selection_Groups_Recognition();
 		commonOR.selection_Groups_trainAndDev();
-	}*/
+	}
+	
 	@AfterMethod
 	public void tearDown(ITestResult result) {
 		try {
