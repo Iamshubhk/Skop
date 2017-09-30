@@ -1,5 +1,7 @@
 package skop.tests;
 
+import static org.testng.Assert.assertTrue;
+
 import java.io.IOException;
 import java.net.URL;
 
@@ -168,7 +170,7 @@ public class SKOP_URL_Verification extends TestBase {
 	@Test(priority=6)
 	public void check_cat_li_sets_Url() throws Throwable {
 		
-		testcasename = "TC_07_URL_check_cat_li_sets_Url";
+		testcasename = "TC_07_URL_check_cat_li_sets";
 		extent = getExtent();
 		loggers = startTest(testcasename);
 		
@@ -192,7 +194,7 @@ public class SKOP_URL_Verification extends TestBase {
 	@Test(priority=7)
 	public void selection_Groups_Url() throws Throwable {
 		
-		testcasename = "TC_08_URL_selection_Groups_Url";
+		testcasename = "TC_08_URL_selection_Groups";
 		extent = getExtent();
 		loggers = startTest(testcasename);
 		
@@ -212,6 +214,185 @@ public class SKOP_URL_Verification extends TestBase {
 		commonOR.selection_Groups_Recognition();
 		commonOR.selection_Groups_trainAndDev();
 	}
+	
+	
+	
+	@Test(priority=8)
+	public void scope_Recruitment_Url() throws Throwable {
+		
+		testcasename = "TC_09_Scope_Recruitment";
+		extent = getExtent();
+		loggers = startTest(testcasename);
+		
+		CommonObjectsRepo commonOR = new CommonObjectsRepo(driver);
+		String endPoint = getEndPoint(13, 3);
+		URL url = urlbuilder(endPoint);
+
+		loggers.log(Status.INFO, "URL to be navigate: " + url);
+		NavigateTo(url);
+
+		String response = isLinkBroken(url);
+		loggers.log(Status.INFO, "URL response is: " + response);
+
+		loggers.log(Status.INFO, "Verifying the sope recruitment page objects..");
+		commonOR.scopeRecruitmentPagelableVerify();
+		commonOR.payroll();
+		commonOR.executiveearch();
+		
+	}
+	
+	
+	@Test(priority=9)
+	public void scope_Quantify_Url() throws Throwable {
+		
+		testcasename = "TC_10_URL_Quantify";
+		extent = getExtent();
+		loggers = startTest(testcasename);
+		
+		CommonObjectsRepo commonOR = new CommonObjectsRepo(driver);
+		String endPoint = getEndPoint(14, 3);
+		URL url = urlbuilder(endPoint);
+
+		loggers.log(Status.INFO, "URL to be navigate: " + url);
+		NavigateTo(url);
+
+		String response = isLinkBroken(url);
+		loggers.log(Status.INFO, "URL response is: " + response);
+
+		loggers.log(Status.INFO, "Verifying the scope quantify page objects..");
+		commonOR.candidateManagement();
+		commonOR.clientportal();
+		commonOR.executiveearch();
+		
+	}
+	
+	
+	@Test(priority=10)
+	public void sunburstPage_Url() throws Throwable {
+		
+		testcasename = "TC_11_URL_Sunburst";
+		extent = getExtent();
+		loggers = startTest(testcasename);
+		
+		CommonObjectsRepo commonOR = new CommonObjectsRepo(driver);
+		String endPoint = getEndPoint(15, 3);
+		URL url = urlbuilder(endPoint);
+
+		loggers.log(Status.INFO, "URL to be navigate: " + url);
+		NavigateTo(url);
+
+		String response = isLinkBroken(url);
+		loggers.log(Status.INFO, "URL response is: " + response);
+
+		loggers.log(Status.INFO, "Verifying the sunburst page objects..");
+		commonOR.sunburstPagelableVerify();
+		commonOR.peerInsights();
+		commonOR.yourProject();
+		
+	}
+	
+	@Test(priority=11)
+	public void treeMapPage_Url() throws Throwable {
+		
+		testcasename = "TC_12_URL_Treemap";
+		extent = getExtent();
+		loggers = startTest(testcasename);
+		
+		CommonObjectsRepo commonOR = new CommonObjectsRepo(driver);
+		String endPoint = getEndPoint(16, 3);
+		URL url = urlbuilder(endPoint);
+
+		loggers.log(Status.INFO, "URL to be navigate: " + url);
+		NavigateTo(url);
+
+		String response = isLinkBroken(url);
+		loggers.log(Status.INFO, "URL response is: " + response);
+
+		loggers.log(Status.INFO, "Verifying the sope recruitment page objects..");
+		commonOR.treeMapPagelableVerify();
+		commonOR.peerData();
+		commonOR.Projectdata();
+		
+	}
+	
+	//Benefit analyser objects
+	
+	@Test(priority=12)
+	public void benefitAnalyser_Url() throws Throwable {
+		
+		testcasename = "TC_13_URL_BenefitAnalyser";
+		extent = getExtent();
+		loggers = startTest(testcasename);
+		
+		CommonObjectsRepo commonOR = new CommonObjectsRepo(driver);
+		String endPoint = getEndPoint(17, 3);
+		URL url = urlbuilder(endPoint);
+
+		loggers.log(Status.INFO, "URL to be navigate: " + url);
+		NavigateTo(url);
+
+		String response = isLinkBroken(url);
+		loggers.log(Status.INFO, "URL response is: " + response);
+
+		loggers.log(Status.INFO, "Verifying the Benefit Analyser page objects..");
+		commonOR.benefitsAnalyserPagelableVerify();
+		commonOR.category();
+		commonOR.feature();
+		
+	}
+	
+	
+	@Test(priority=13)
+	public void scopeAnalysis_Url() throws Throwable {
+		
+		testcasename = "TC_14_URL_ScopeAnalysis";
+		extent = getExtent();
+		loggers = startTest(testcasename);
+		
+		CommonObjectsRepo commonOR = new CommonObjectsRepo(driver);
+		String endPoint = getEndPoint(18, 3);
+		URL url = urlbuilder(endPoint);
+
+		loggers.log(Status.INFO, "URL to be navigate: " + url);
+		NavigateTo(url);
+
+		String response = isLinkBroken(url);
+		loggers.log(Status.INFO, "URL response is: " + response);
+
+		loggers.log(Status.INFO, "Verifying the scope analysis page objects..");
+		commonOR.metricFeature();
+		commonOR.peerIntel();
+		
+		
+	}
+	
+	@Test(priority=14)
+	public void scopeEditor_Url() throws Throwable {
+		
+		testcasename = "TC_15_URL_SCOPE_EDITOR";
+		extent = getExtent();
+		loggers = startTest(testcasename);
+		
+		CommonObjectsRepo commonOR = new CommonObjectsRepo(driver);
+		String endPoint = getEndPoint(19, 3);
+		URL url = urlbuilder(endPoint);
+
+		loggers.log(Status.INFO, "URL to be navigate: " + url);
+		NavigateTo(url);
+
+		String response = isLinkBroken(url);
+		loggers.log(Status.INFO, "URL response is: " + response);
+
+		loggers.log(Status.INFO, "Verifying the scope editor page objects..");
+		commonOR.scopEditorPagelableVerify();
+		commonOR.settings();
+		
+		
+	}
+	
+	
+	
+	
 	
 	@AfterMethod
 	public void tearDown(ITestResult result) {

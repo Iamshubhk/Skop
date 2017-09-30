@@ -43,6 +43,31 @@ public class CommonObjectsRepo extends TestBase {
 	public static final String groupSelection_coreRecruitment="Core Recruitment";
 	public static final String groupSelection_OnBoarding="On Boarding";
 	
+	public static final String expectedScopingSystem_Heading="About your team";
+	public static final String expected_payroll="Payroll";
+	public static final String expected_executive_Search="Executive Search";
+	
+	public static final String expected_CandidateManagement="Candidate Management";
+	public static final String expected_Client_portal="Client portal";
+	
+	public static final String expected_Sunburst_Heading="SUNBURST FUNCTIONALITY VISUALISATION";
+	public static final String expected_PeerInsights="PEER INSIGHTS";
+	public static final String expected_YourProject="YOUR PROJECT";
+	
+	public static final String expected_Treemap_Heading="SCOPE AND FEATURE TREEMAP EXPLORER";
+	public static final String expected_Peerdata="Peer data";
+	public static final String expected_ProjectData="User/project data";
+	
+	
+	public static final String expected_Benefits_Analyser="Benefits Analyser";
+	public static final String expected_Category="CATEGORY";
+	public static final String expected_feature="FEATURE";
+	
+	public static final String expected_Peer_intel="Peer intel: Feature Popularity";
+	public static final String expected_MetricAndfeature="METRIC & FEATURE DESCRIPTION";
+	
+	public static final String expected_SCOPE_EDITOR="SCOPE EDITOR";
+	public static final String expected_YOUR_SETTINGS="YOUR SETTINGS";
 	
 	//HOME PAGE OBJECTS
 	
@@ -123,8 +148,80 @@ public class CommonObjectsRepo extends TestBase {
 	@FindBy(xpath="//h3[contains(text(),'On Boarding')]")
 	private WebElement ONBOARDING;
 	
+	//Scoping system objects
+	
+	@FindBy(xpath="//div[contains(text(),'Scoping Recruitment Systems')]")
+	private WebElement SCOPINGRECRITMENTHEADING;
+	
+	@FindBy(xpath="//h3[contains(text(),'Payroll')]")
+	private WebElement 	PAYROLL;
+	
+	@FindBy(xpath="//h3[contains(text(),'Executive Search')]")
+	private WebElement 	EXECUTIVESEARCH;
+	
+	//Candidate Management objects
+	
+	@FindBy(xpath="//h3[contains(text(),'Candidate Management')]")
+	private WebElement 	CANDIDATEMANAGEMENT;
+	
+	@FindBy(xpath="//h3[contains(text(),'Client portal')]")
+	private WebElement 	CLIENTPORTAL;
+	
+	//Sunburst objects
+	
+	@FindBy(xpath="//div[contains(text(),'SUNBURST FUNCTIONALITY VISUALISATION')]")
+	private WebElement 	SURNHEADING;
+	
+	@FindBy(xpath="//h4[contains(text(),'PEER INSIGHTS')]")
+	private WebElement 	PEERINSIGHTS;
 	
 	
+	@FindBy(xpath="//h4[contains(text(),'YOUR PROJECT')]")
+	private WebElement 	YOURPROJECT;
+	
+	
+	//TREEMAP objects
+	
+	@FindBy(xpath="//div[contains(text(),'SCOPE AND FEATURE TREEMAP EXPLORER')]")
+	private WebElement 	TREEMAPHEADING;
+	
+	@FindBy(xpath="//td[contains(text(),'Peer data')]")
+	private WebElement 	PEERDATA;
+	
+	@FindBy(xpath="//td[contains(text(),'User/project data')]")
+	private WebElement 	PROJECTDATA;
+	
+	
+	//Benefits objects
+	
+	@FindBy(xpath="//div[contains(text(),'Benefits Analyser')]")
+	private WebElement 	BENEFITSANALYSERHEADING;
+	
+	@FindBy(xpath="//th[contains(text(),'CATEGORY')]")
+	private WebElement 	CATEGORY;
+	
+	@FindBy(xpath="//th[contains(text(),'FEATURE')]")
+	private WebElement 	FEATURE;
+	
+	
+	//Scope Analysis objects
+	@FindBy(xpath="//div[contains(text(),'Peer intel: Feature Popularity')]")
+	private WebElement 	PEERINTEL;
+	
+	@FindBy(xpath="//td[contains(text(),'METRIC & FEATURE DESCRIPTION')]")
+	private WebElement 	METRICFEATURE;
+	
+	
+	//SCOPE EDITOR objects
+	
+	@FindBy(xpath="//div[contains(text(),'SCOPE EDITOR')]")
+	private WebElement 	SCOPEEDITOR;
+	
+	@FindBy(xpath="//h4[contains(text(),'YOUR SETTINGS')]")
+	private WebElement 	YOURSETTINGS;
+	
+	
+	//###############################################################################################################################
 	public CommonObjectsRepo(WebDriver driver){
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -227,5 +324,121 @@ public class CommonObjectsRepo extends TestBase {
 	public void selection_Groups_onBoard(){
 		checkObjectIsDisplayed(ONBOARDING);
 		assertTrue(verifyText(ONBOARDING, groupSelection_OnBoarding,CONTAINS));
+	}
+	
+	//Scoping system objects
+	
+	
+	public void scopeRecruitmentPagelableVerify(){
+		checkObjectIsDisplayed(SCOPINGRECRITMENTHEADING);
+		verifyText(SCOPINGRECRITMENTHEADING, expectedScopingSystem_Heading,CONTAINS);
+	}
+	
+	public void payroll(){
+		checkObjectIsDisplayed(PAYROLL);
+		assertTrue(verifyText(PAYROLL, expected_payroll,CONTAINS));	
+	}
+	
+	public void executiveearch(){
+		checkObjectIsDisplayed(EXECUTIVESEARCH);
+		assertTrue(verifyText(EXECUTIVESEARCH, expected_executive_Search,CONTAINS));	
+	}
+	
+	//Candidate Management objects
+		
+	public void candidateManagement(){
+		checkObjectIsDisplayed(CANDIDATEMANAGEMENT);
+		assertTrue(verifyText(CANDIDATEMANAGEMENT, expected_CandidateManagement,CONTAINS));	
+	}
+	
+	public void clientportal(){
+		checkObjectIsDisplayed(CLIENTPORTAL);
+		assertTrue(verifyText(CLIENTPORTAL, expected_Client_portal,CONTAINS));	
+	}
+	
+	//Sunburst objects
+	
+	
+	public void sunburstPagelableVerify(){
+		checkObjectIsDisplayed(SURNHEADING);
+		verifyText(SURNHEADING, expected_Sunburst_Heading,CONTAINS);
+	}
+	
+	
+	public void peerInsights(){
+		checkObjectIsDisplayed(PEERINSIGHTS);
+		assertTrue(verifyText(PEERINSIGHTS, expected_PeerInsights,CONTAINS));	
+	}
+	
+	public void yourProject(){
+		checkObjectIsDisplayed(YOURPROJECT);
+		assertTrue(verifyText(YOURPROJECT, expected_YourProject,CONTAINS));	
+	}
+	
+	//Treemap objects
+	
+	
+	public void treeMapPagelableVerify(){
+		checkObjectIsDisplayed(TREEMAPHEADING);
+		verifyText(TREEMAPHEADING, expected_Treemap_Heading,CONTAINS);
+	}
+	
+	
+	public void peerData(){
+		checkObjectIsDisplayed(PEERDATA);
+		assertTrue(verifyText(PEERDATA, expected_Peerdata,CONTAINS));	
+	}
+	
+	public void Projectdata(){
+		checkObjectIsDisplayed(PROJECTDATA);
+		assertTrue(verifyText(PROJECTDATA, expected_ProjectData,CONTAINS));	
+	}
+	
+	
+	//Benefit analyser objects
+	
+	
+	public void benefitsAnalyserPagelableVerify(){
+		checkObjectIsDisplayed(BENEFITSANALYSERHEADING);
+		verifyText(BENEFITSANALYSERHEADING, expected_Benefits_Analyser,CONTAINS);
+	}
+	
+	
+	public void category(){
+		checkObjectIsDisplayed(CATEGORY);
+		assertTrue(verifyText(CATEGORY, expected_Category,CONTAINS));	
+	}
+	
+	public void feature(){
+		checkObjectIsDisplayed(FEATURE);
+		assertTrue(verifyText(FEATURE, expected_feature,CONTAINS));	
+	
+	}
+	
+	//Scope Analysis objects
+	
+	public void metricFeature(){
+		checkObjectIsDisplayed(METRICFEATURE);
+		verifyText(METRICFEATURE, expected_MetricAndfeature,CONTAINS);
+	}
+	
+	
+	public void peerIntel(){
+		checkObjectIsDisplayed(PEERINTEL);
+		assertTrue(verifyText(PEERINTEL, expected_Peer_intel,CONTAINS));	
+	}
+	
+	//SCOPE EDITOR objects
+	
+	
+	public void scopEditorPagelableVerify(){
+		checkObjectIsDisplayed(SCOPEEDITOR);
+		verifyText(SCOPEEDITOR, expected_SCOPE_EDITOR,CONTAINS);
+	}
+	
+	
+	public void settings(){
+		checkObjectIsDisplayed(YOURSETTINGS);
+		assertTrue(verifyText(YOURSETTINGS, expected_YOUR_SETTINGS,CONTAINS));	
 	}
 }

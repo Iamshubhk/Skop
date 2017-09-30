@@ -50,11 +50,11 @@ public class ExtentFactory extends CaptureScreenshot {
 			screenShotPath = getScreenshot(driver, screenshotName);		
 			loggers.log(Status.FAIL, MarkupHelper.createLabel(result.getName()+" Test is FAILED due to below issues:", ExtentColor.RED));
 			loggers.fail(result.getThrowable());
-			loggers.fail("Snapshot below: " + loggers.addScreenCaptureFromPath(screenShotPath));
+			//loggers.fail("Snapshot below: " + loggers.addScreenCaptureFromPath(screenShotPath));
 		} else if (result.getStatus() == ITestResult.SUCCESS) {
 			screenShotPath = getScreenshot(driver, screenshotName);	
 			loggers.log(Status.PASS, MarkupHelper.createLabel(result.getName()+" Test is PASSED", ExtentColor.GREEN));
-			loggers.pass("Snapshot Here: " + loggers.addScreenCaptureFromPath(screenShotPath));
+			//loggers.pass("Snapshot Here: " + loggers.addScreenCaptureFromPath(screenShotPath));
 		} else if (result.getStatus() == ITestResult.SKIP) {
 			loggers.log(Status.SKIP, MarkupHelper.createLabel(result.getName()+" Test is SKIPPED", ExtentColor.GREY));
 			loggers.skip(result.getThrowable());
