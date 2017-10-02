@@ -10,435 +10,589 @@ import org.openqa.selenium.support.PageFactory;
 import skop.testbase.TestBase;
 
 public class CommonObjectsRepo extends TestBase {
-	
+
 	public WebDriver driver;
-	public static final String CONTAINS="CONTAINS";
-	public static final String STARTS_WITH="STARTS_WITH";
-	public static final String NOT_CONTAINS="NOT_CONTAINS";
-	public static final String EQUALS="EQUALS";
-	public static final String NOT_EQUALS="NOT_EQUALS";
+	public static final String CONTAINS = "CONTAINS";
+	public static final String STARTS_WITH = "STARTS_WITH";
+	public static final String NOT_CONTAINS = "NOT_CONTAINS";
+	public static final String EQUALS = "EQUALS";
+	public static final String NOT_EQUALS = "NOT_EQUALS";
+
+	public static final String expectedHomePagelabel = "1.PROJECT PREPARATION AND SET-UP In Progress : 12 / 15";
+
+	public static final String expectedMyprofileHeading = "MY PROFILE & SETTINGS";
+	public static final String expectedFirstNamelabel = "First Name:";
+
+	public static final String changePasswordHeading = "CHANGE PASSWORD";
+	public static final String newPasswordlabel = "New Password:";
+
+	public static final String teampageHeading = "About your team";
+	public static final String teamMemberSection = "Team members";
+
+	public static final String teamRolespageHeading = "Scoping Recruitment Systems";
+
+	public static final String outConfigpageHeading = "Set Project Objectives";
+	public static final String outConfig_srategicObjectives = "Strategic Objectives";
+
+	public static final String CAT_LI_pageHeading = "Scoping Recruitment Systems";
+	public static final String CAT_LI_recruitmentSystems = "Recruitment systems";
+
+	public static final String groupSelection_TrainingAndDev = "Training & Development";
+	public static final String groupSelection_Recognition = "Recognition";
+	public static final String groupSelection_coreRecruitment = "Core Recruitment";
+	public static final String groupSelection_OnBoarding = "On Boarding";
+
+	public static final String expectedScopingSystem_Heading = "About your team";
+	public static final String expected_payroll = "Payroll";
+	public static final String expected_executive_Search = "Executive Search";
+
+	public static final String expected_CandidateManagement = "Candidate Management";
+	public static final String expected_Client_portal = "Client portal";
+
+	public static final String expected_Sunburst_Heading = "SUNBURST FUNCTIONALITY VISUALISATION";
+	public static final String expected_PeerInsights = "PEER INSIGHTS";
+	public static final String expected_YourProject = "YOUR PROJECT";
+
+	public static final String expected_Treemap_Heading = "SCOPE AND FEATURE TREEMAP EXPLORER";
+	public static final String expected_Peerdata = "Peer data";
+	public static final String expected_ProjectData = "User/project data";
+
+	public static final String expected_Benefits_Analyser = "Benefits Analyser";
+	public static final String expected_Category = "CATEGORY";
+	public static final String expected_feature = "FEATURE";
+
+	public static final String expected_Peer_intel = "Peer intel: Feature Popularity";
+	public static final String expected_MetricAndfeature = "METRIC & FEATURE DESCRIPTION";
+
+	public static final String expected_SCOPE_EDITOR = "SCOPE EDITOR";
+	public static final String expected_YOUR_SETTINGS = "YOUR SETTINGS";
+
+	public static final String expected_Risk_mgt_Risks = "Risks";
+	public static final String expected__Risk_mgt_IDENTIFY_RISKS = "IDENTIFY RISKS";
+	public static final String expected__Risk_mgt_Risk_Chart = "Risk Chart";
+
+	public static final String expected_eoi_pageHeading = "EXPRESSION OF INTEREST INVITATION";
+
+	public static final String expected_EOI_RESULT_HEADING = "EOI RESPONSE AND FIT SCORE";
+	public static final String expected_EOI_RESULT_SUMMARY = "Executive Summary";
+
+	public static final String expected_RFQ_EMAIL_HEADING = "REQUEST FOR QUOTATION INVITATION";
+	public static final String expected_RFQ_EMAIL_FITSCORE = "System Fit Score";
 	
-	public static final String expectedHomePagelabel="1.PROJECT PREPARATION AND SET-UP In Progress : 12 / 15";
-	
-	public static final String expectedMyprofileHeading="MY PROFILE & SETTINGS";
-	public static final String expectedFirstNamelabel="First Name:";
-	
-	public static final String changePasswordHeading="CHANGE PASSWORD";
-	public static final String newPasswordlabel="New Password:";
-	
-	public static final String teampageHeading="About your team";
-	public static final String teamMemberSection="Team members";
-	
-	public static final String teamRolespageHeading="Scoping Recruitment Systems";
-	
-	public static final String outConfigpageHeading="Set Project Objectives";
-	public static final String outConfig_srategicObjectives="Strategic Objectives";
-	
-	
-	public static final String CAT_LI_pageHeading="Scoping Recruitment Systems";
-	public static final String CAT_LI_recruitmentSystems="Recruitment systems";
-	
-	public static final String groupSelection_TrainingAndDev="Training & Development";
-	public static final String groupSelection_Recognition="Recognition";
-	public static final String groupSelection_coreRecruitment="Core Recruitment";
-	public static final String groupSelection_OnBoarding="On Boarding";
-	
-	public static final String expectedScopingSystem_Heading="About your team";
-	public static final String expected_payroll="Payroll";
-	public static final String expected_executive_Search="Executive Search";
-	
-	public static final String expected_CandidateManagement="Candidate Management";
-	public static final String expected_Client_portal="Client portal";
-	
-	public static final String expected_Sunburst_Heading="SUNBURST FUNCTIONALITY VISUALISATION";
-	public static final String expected_PeerInsights="PEER INSIGHTS";
-	public static final String expected_YourProject="YOUR PROJECT";
-	
-	public static final String expected_Treemap_Heading="SCOPE AND FEATURE TREEMAP EXPLORER";
-	public static final String expected_Peerdata="Peer data";
-	public static final String expected_ProjectData="User/project data";
-	
-	
-	public static final String expected_Benefits_Analyser="Benefits Analyser";
-	public static final String expected_Category="CATEGORY";
-	public static final String expected_feature="FEATURE";
-	
-	public static final String expected_Peer_intel="Peer intel: Feature Popularity";
-	public static final String expected_MetricAndfeature="METRIC & FEATURE DESCRIPTION";
-	
-	public static final String expected_SCOPE_EDITOR="SCOPE EDITOR";
-	public static final String expected_YOUR_SETTINGS="YOUR SETTINGS";
-	
-	//HOME PAGE OBJECTS
-	
-	@FindBy(xpath="//h3[contains(text(),'PROJECT PREPARATION AND SET-UP')]")
+	public static final String expected_rfq_result_HEADING="RFQ RESPONSES AND REQUIREMENTS/FUNCTIONALITY MATCH";
+	public static final String expected_rfq_technology_fee="Technology Fee";
+
+	// HOME PAGE OBJECTS
+
+	@FindBy(xpath = "//h3[contains(text(),'PROJECT PREPARATION AND SET-UP')]")
 	private WebElement HOMEOBJECT;
-	
-	
-	//MY PROFILE OBJECTS
-	
-	@FindBy(xpath="//div[contains(text(),'MY PROFILE & SETTINGS')]")
+
+	// MY PROFILE OBJECTS
+
+	@FindBy(xpath = "//div[contains(text(),'MY PROFILE & SETTINGS')]")
 	private WebElement MYPROFILEHEADING;
-	
-	@FindBy(xpath="//label[contains(text(),'First Name:')]")
+
+	@FindBy(xpath = "//label[contains(text(),'First Name:')]")
 	private WebElement FIRSTNAMELABEL;
-	
-	//CHANGE PASSWORD OBJECTS
-	
-	@FindBy(xpath="//div[contains(text(),'CHANGE PASSWORD')]")
+
+	// CHANGE PASSWORD OBJECTS
+
+	@FindBy(xpath = "//div[contains(text(),'CHANGE PASSWORD')]")
 	private WebElement CHAGNEPASSWORDHEADING;
-	
-	@FindBy(xpath="//label[contains(text(),'New Password:')]")
+
+	@FindBy(xpath = "//label[contains(text(),'New Password:')]")
 	private WebElement NEWPASSWORDLABEL;
-	
-	
-	//TEAM PAGE OBJECTS
-	
-	@FindBy(xpath="//div[contains(text(),'About your team')]")
+
+	// TEAM PAGE OBJECTS
+
+	@FindBy(xpath = "//div[contains(text(),'About your team')]")
 	private WebElement TEAMPAGEHEADING;
-	
-	@FindBy(xpath="//h3[contains(text(),'Team members')]")
+
+	@FindBy(xpath = "//h3[contains(text(),'Team members')]")
 	private WebElement TEAMMEMBERS;
-	
-	
-	//TEAM ROLES PAGE OBJECTS
-	
-	@FindBy(xpath="//div[contains(text(),'Scoping Recruitment Systems')]")
+
+	// TEAM ROLES PAGE OBJECTS
+
+	@FindBy(xpath = "//div[contains(text(),'Scoping Recruitment Systems')]")
 	private WebElement TEAMROLESPAGEHEADING;
-	
-	
-	//OUTCOME CONFIG PAGE OBJECTS
-	
-	@FindBy(xpath="//div[contains(text(),'Set Project Objectives')]")
+
+	// OUTCOME CONFIG PAGE OBJECTS
+
+	@FindBy(xpath = "//div[contains(text(),'Set Project Objectives')]")
 	private WebElement OUTCOMECONFIGPAGEHEADING;
-	
-	
-	@FindBy(xpath="//h3[contains(text(),'Strategic Objectives')]")
+
+	@FindBy(xpath = "//h3[contains(text(),'Strategic Objectives')]")
 	private WebElement STRATEGICOBJECTIVES;
-	
-	//Select Cat/LI Sets page objects
-	
-	@FindBy(xpath="//div[contains(text(),'Scoping Recruitment Systems')]")
+
+	// Select Cat/LI Sets page objects
+
+	@FindBy(xpath = "//div[contains(text(),'Scoping Recruitment Systems')]")
 	private WebElement CAT_LI_PAGEHEADING;
-	
-	@FindBy(xpath="//h3[contains(text(),'Recruitment systems')]")
-	private WebElement 	ERP;
-	
-	@FindBy(xpath="//h3[contains(text(),'Recruitment systems')]")
-	private WebElement 	RECRUITMENTSYSTEMS;
-	
-	@FindBy(xpath="//h3[contains(text(),'CRM Systems')]")
+
+	@FindBy(xpath = "//h3[contains(text(),'Recruitment systems')]")
+	private WebElement ERP;
+
+	@FindBy(xpath = "//h3[contains(text(),'Recruitment systems')]")
+	private WebElement RECRUITMENTSYSTEMS;
+
+	@FindBy(xpath = "//h3[contains(text(),'CRM Systems')]")
 	private WebElement CRMSYSTEMS;
-	
-	@FindBy(xpath="//h3[contains(text(),'Core System')]")
+
+	@FindBy(xpath = "//h3[contains(text(),'Core System')]")
 	private WebElement CORESYSTEMS;
-	
-	
-	//Selection groups
-	
-	@FindBy(xpath="//h3[contains(text(),'Training & Development')]")
-	private WebElement 	TRARINGANDDEVLOPMENT;
-	
-	@FindBy(xpath="//h3[contains(text(),'Core Recruitment')]")
-	private WebElement 	CORERECRUITMENT;
-	
-	@FindBy(xpath="//h3[contains(text(),'Recognition')]")
+
+	// Selection groups
+
+	@FindBy(xpath = "//h3[contains(text(),'Training & Development')]")
+	private WebElement TRARINGANDDEVLOPMENT;
+
+	@FindBy(xpath = "//h3[contains(text(),'Core Recruitment')]")
+	private WebElement CORERECRUITMENT;
+
+	@FindBy(xpath = "//h3[contains(text(),'Recognition')]")
 	private WebElement RECOGNITION;
-	
-	@FindBy(xpath="//h3[contains(text(),'On Boarding')]")
+
+	@FindBy(xpath = "//h3[contains(text(),'On Boarding')]")
 	private WebElement ONBOARDING;
-	
-	//Scoping system objects
-	
-	@FindBy(xpath="//div[contains(text(),'Scoping Recruitment Systems')]")
+
+	// Scoping system objects
+
+	@FindBy(xpath = "//div[contains(text(),'Scoping Recruitment Systems')]")
 	private WebElement SCOPINGRECRITMENTHEADING;
+
+	@FindBy(xpath = "//h3[contains(text(),'Payroll')]")
+	private WebElement PAYROLL;
+
+	@FindBy(xpath = "//h3[contains(text(),'Executive Search')]")
+	private WebElement EXECUTIVESEARCH;
+
+	// Candidate Management objects
+
+	@FindBy(xpath = "//h3[contains(text(),'Candidate Management')]")
+	private WebElement CANDIDATEMANAGEMENT;
+
+	@FindBy(xpath = "//h3[contains(text(),'Client portal')]")
+	private WebElement CLIENTPORTAL;
+
+	// Sunburst objects
+
+	@FindBy(xpath = "//div[contains(text(),'SUNBURST FUNCTIONALITY VISUALISATION')]")
+	private WebElement SURNHEADING;
+
+	@FindBy(xpath = "//h4[contains(text(),'PEER INSIGHTS')]")
+	private WebElement PEERINSIGHTS;
+
+	@FindBy(xpath = "//h4[contains(text(),'YOUR PROJECT')]")
+	private WebElement YOURPROJECT;
+
+	// TREEMAP objects
+
+	@FindBy(xpath = "//div[contains(text(),'SCOPE AND FEATURE TREEMAP EXPLORER')]")
+	private WebElement TREEMAPHEADING;
+
+	@FindBy(xpath = "//td[contains(text(),'Peer data')]")
+	private WebElement PEERDATA;
+
+	@FindBy(xpath = "//td[contains(text(),'User/project data')]")
+	private WebElement PROJECTDATA;
+
+	// Benefits objects
+
+	@FindBy(xpath = "//div[contains(text(),'Benefits Analyser')]")
+	private WebElement BENEFITSANALYSERHEADING;
+
+	@FindBy(xpath = "//th[contains(text(),'CATEGORY')]")
+	private WebElement CATEGORY;
+
+	@FindBy(xpath = "//th[contains(text(),'FEATURE')]")
+	private WebElement FEATURE;
+
+	// Scope Analysis objects
+	@FindBy(xpath = "//div[contains(text(),'Peer intel: Feature Popularity')]")
+	private WebElement PEERINTEL;
+
+	@FindBy(xpath = "//td[contains(text(),'METRIC & FEATURE DESCRIPTION')]")
+	private WebElement METRICFEATURE;
+
+	// SCOPE EDITOR objects
+
+	@FindBy(xpath = "//div[contains(text(),'SCOPE EDITOR')]")
+	private WebElement SCOPEEDITOR;
+
+	@FindBy(xpath = "//h4[contains(text(),'YOUR SETTINGS')]")
+	private WebElement YOURSETTINGS;
+
+	@FindBy(xpath = "//label[contains(text(),'Grouped')]")
+	private WebElement GROUPED;
+
+	@FindBy(xpath = "//label[contains(text(),'Stacked')]")
+	private WebElement STACKED;
+
+	// Risk & mgt & viz objects
+
+	@FindBy(xpath = "//div[contains(text(),'Risks')]")
+	private WebElement RISKPAGEHEADING;
+
+	@FindBy(xpath = "//h3[contains(text(),'IDENTIFY RISKS')]")
+	private WebElement IDENTIFYRISKS;
+
+	@FindBy(xpath = "//h3[contains(text(),'Risk Chart')]")
+	private WebElement RISKCHART;
+
+	// Dates & Milestones
+
+	@FindBy(xpath = "//h3[contains(text(),'Milestones')]")
+	private WebElement MILESTONES;
+
+	@FindBy(xpath = "//h3[contains(text(),'Key project dates')]")
+	private WebElement KEYPROJECTDATES;
+
+	// Specification
+
+	@FindBy(xpath = "//h3[contains(text(),'Core Recruitment')]")
+	private WebElement SPEC_CORERECRUITMENT;
+
+	@FindBy(xpath = "//h3[contains(text(),'Candidate Management')]")
+	private WebElement SPEC_CANDIDATEMANAGEMENT;
+
+	// EoI Invite objects
+
+	@FindBy(xpath = "//div[contains(text(),'EXPRESSION OF INTEREST INVITATION')]")
+	private WebElement EOIINVITEPAGEHEADING;
+
+	@FindBy(xpath = "//th[contains(text(),'Logo')]")
+	private WebElement LOGO;
+
+	@FindBy(xpath = "//th[contains(text(),'Details')]")
+	private WebElement DETAILS;
+
+	// EoI results objects
+
+	@FindBy(xpath = "//div[contains(text(),'EOI RESPONSE AND FIT SCORE')]")
+	private WebElement EOIRESULTEPAGEHEADING;
+
+	@FindBy(xpath = "//span[contains(text(),'Executive Summary')]")
+	private WebElement EXECUTIVESUMMARY;
+
+	// RFQ EMAIL objects
+
+	@FindBy(xpath = "//div[contains(text(),'REQUEST FOR QUOTATION INVITATION')]")
+	private WebElement RFQEMAILPAGEHEADING;
+
+	@FindBy(xpath = "//th[contains(text(),'System Fit Score')]")
+	private WebElement RFQSYSTEMFIT;
 	
-	@FindBy(xpath="//h3[contains(text(),'Payroll')]")
-	private WebElement 	PAYROLL;
+	//rfq result objects
 	
-	@FindBy(xpath="//h3[contains(text(),'Executive Search')]")
-	private WebElement 	EXECUTIVESEARCH;
+	@FindBy(xpath="//div[contains(text(),'RFQ RESPONSES AND REQUIREMENTS/FUNCTIONALITY MATCH')]")
+	private WebElement 	RFQRESULTPAGEHEADING;
 	
-	//Candidate Management objects
-	
-	@FindBy(xpath="//h3[contains(text(),'Candidate Management')]")
-	private WebElement 	CANDIDATEMANAGEMENT;
-	
-	@FindBy(xpath="//h3[contains(text(),'Client portal')]")
-	private WebElement 	CLIENTPORTAL;
-	
-	//Sunburst objects
-	
-	@FindBy(xpath="//div[contains(text(),'SUNBURST FUNCTIONALITY VISUALISATION')]")
-	private WebElement 	SURNHEADING;
-	
-	@FindBy(xpath="//h4[contains(text(),'PEER INSIGHTS')]")
-	private WebElement 	PEERINSIGHTS;
-	
-	
-	@FindBy(xpath="//h4[contains(text(),'YOUR PROJECT')]")
-	private WebElement 	YOURPROJECT;
-	
-	
-	//TREEMAP objects
-	
-	@FindBy(xpath="//div[contains(text(),'SCOPE AND FEATURE TREEMAP EXPLORER')]")
-	private WebElement 	TREEMAPHEADING;
-	
-	@FindBy(xpath="//td[contains(text(),'Peer data')]")
-	private WebElement 	PEERDATA;
-	
-	@FindBy(xpath="//td[contains(text(),'User/project data')]")
-	private WebElement 	PROJECTDATA;
-	
-	
-	//Benefits objects
-	
-	@FindBy(xpath="//div[contains(text(),'Benefits Analyser')]")
-	private WebElement 	BENEFITSANALYSERHEADING;
-	
-	@FindBy(xpath="//th[contains(text(),'CATEGORY')]")
-	private WebElement 	CATEGORY;
-	
-	@FindBy(xpath="//th[contains(text(),'FEATURE')]")
-	private WebElement 	FEATURE;
-	
-	
-	//Scope Analysis objects
-	@FindBy(xpath="//div[contains(text(),'Peer intel: Feature Popularity')]")
-	private WebElement 	PEERINTEL;
-	
-	@FindBy(xpath="//td[contains(text(),'METRIC & FEATURE DESCRIPTION')]")
-	private WebElement 	METRICFEATURE;
-	
-	
-	//SCOPE EDITOR objects
-	
-	@FindBy(xpath="//div[contains(text(),'SCOPE EDITOR')]")
-	private WebElement 	SCOPEEDITOR;
-	
-	@FindBy(xpath="//h4[contains(text(),'YOUR SETTINGS')]")
-	private WebElement 	YOURSETTINGS;
-	
-	
-	//###############################################################################################################################
-	public CommonObjectsRepo(WebDriver driver){
+	@FindBy(xpath="//th[contains(text(),'Technology Fee')]")
+	private WebElement 	RFQTECHNOLOGYFEE;
+
+	// ###############################################################################################################################
+	public CommonObjectsRepo(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
-	
-	//HOME PAGE OBJECTS
-	public void homePagelableVerify(){
+
+	// HOME PAGE OBJECTS
+	public void homePagelableVerify() {
 		checkObjectIsDisplayed(HOMEOBJECT);
-		verifyText(HOMEOBJECT, expectedHomePagelabel,CONTAINS);
+		verifyText(HOMEOBJECT, expectedHomePagelabel, CONTAINS);
 	}
-	
-	
-	//MY PROFILE OBJECTS
-	public void myProfilePagelableVerify(){
+
+	// MY PROFILE OBJECTS
+	public void myProfilePagelableVerify() {
 		checkObjectIsDisplayed(MYPROFILEHEADING);
-		assertTrue(verifyText(MYPROFILEHEADING, expectedMyprofileHeading,CONTAINS));	
+		assertTrue(verifyText(MYPROFILEHEADING, expectedMyprofileHeading, CONTAINS));
 	}
-	
-	public void myProfilefirstNameObj(){
+
+	public void myProfilefirstNameObj() {
 		checkObjectIsDisplayed(FIRSTNAMELABEL);
-		assertTrue(verifyText(FIRSTNAMELABEL, expectedFirstNamelabel,CONTAINS));	
+		assertTrue(verifyText(FIRSTNAMELABEL, expectedFirstNamelabel, CONTAINS));
 	}
-	
-	//CHANGE PASSWORD OBJECTS
-	public void chagnePasswordPagelableVerify(){
+
+	// CHANGE PASSWORD OBJECTS
+	public void chagnePasswordPagelableVerify() {
 		checkObjectIsDisplayed(CHAGNEPASSWORDHEADING);
-		assertTrue(verifyText(CHAGNEPASSWORDHEADING, changePasswordHeading,CONTAINS));	
+		assertTrue(verifyText(CHAGNEPASSWORDHEADING, changePasswordHeading, CONTAINS));
 	}
-	
-	public void newPasswordObj(){
+
+	public void newPasswordObj() {
 		checkObjectIsDisplayed(NEWPASSWORDLABEL);
-		assertTrue(verifyText(NEWPASSWORDLABEL, newPasswordlabel,CONTAINS));	
+		assertTrue(verifyText(NEWPASSWORDLABEL, newPasswordlabel, CONTAINS));
 	}
-	
-	//TEAM PAGE OBJECTS
-	public void teamPagelableVerify(){
+
+	// TEAM PAGE OBJECTS
+	public void teamPagelableVerify() {
 		checkObjectIsDisplayed(TEAMPAGEHEADING);
-		assertTrue(verifyText(TEAMPAGEHEADING, teampageHeading,CONTAINS));	
+		assertTrue(verifyText(TEAMPAGEHEADING, teampageHeading, CONTAINS));
 	}
-	
-	public void teamMemberObj(){
+
+	public void teamMemberObj() {
 		checkObjectIsDisplayed(TEAMMEMBERS);
-		assertTrue(verifyText(TEAMMEMBERS, teamMemberSection,CONTAINS));	
+		assertTrue(verifyText(TEAMMEMBERS, teamMemberSection, CONTAINS));
 	}
-		
-	//TEAM ROLES PAGE OBJECTS
-	public void teamRolesPagelableVerify(){
+
+	// TEAM ROLES PAGE OBJECTS
+	public void teamRolesPagelableVerify() {
 		checkObjectIsDisplayed(TEAMROLESPAGEHEADING);
-		assertTrue(verifyText(TEAMROLESPAGEHEADING, teamRolespageHeading,CONTAINS));	
+		assertTrue(verifyText(TEAMROLESPAGEHEADING, teamRolespageHeading, CONTAINS));
 	}
-	
-	//OUTCOME CONFIG PAGE OBJECTS
-	public void outComeConfigPagelableVerify(){
+
+	// OUTCOME CONFIG PAGE OBJECTS
+	public void outComeConfigPagelableVerify() {
 		checkObjectIsDisplayed(OUTCOMECONFIGPAGEHEADING);
-		assertTrue(verifyText(OUTCOMECONFIGPAGEHEADING, outConfigpageHeading,CONTAINS));	
+		assertTrue(verifyText(OUTCOMECONFIGPAGEHEADING, outConfigpageHeading, CONTAINS));
 	}
-	
-	public void srategicObjectivesObj(){
+
+	public void srategicObjectivesObj() {
 		checkObjectIsDisplayed(STRATEGICOBJECTIVES);
-		assertTrue(verifyText(STRATEGICOBJECTIVES, outConfig_srategicObjectives,CONTAINS));	
+		assertTrue(verifyText(STRATEGICOBJECTIVES, outConfig_srategicObjectives, CONTAINS));
 	}
-	
-	//OUTCOME CONFIG PAGE OBJECTS
-	public void Cat_li_SetsPagelableVerify(){
+
+	// OUTCOME CONFIG PAGE OBJECTS
+	public void Cat_li_SetsPagelableVerify() {
 		checkObjectIsDisplayed(CAT_LI_PAGEHEADING);
-		assertTrue(verifyText(CAT_LI_PAGEHEADING, CAT_LI_pageHeading,CONTAINS));	
+		assertTrue(verifyText(CAT_LI_PAGEHEADING, CAT_LI_pageHeading, CONTAINS));
 	}
-	
-	public void recruitmentSystemObj(){
+
+	public void recruitmentSystemObj() {
 		checkObjectIsDisplayed(RECRUITMENTSYSTEMS);
-		assertTrue(verifyText(RECRUITMENTSYSTEMS, CAT_LI_recruitmentSystems,CONTAINS));	
+		assertTrue(verifyText(RECRUITMENTSYSTEMS, CAT_LI_recruitmentSystems, CONTAINS));
 	}
-	
-	public void crmSystemsObj(){
-		checkObjectIsDisplayed(CRMSYSTEMS);	
+
+	public void crmSystemsObj() {
+		checkObjectIsDisplayed(CRMSYSTEMS);
 	}
-	
-	public void eRPObj(){
+
+	public void eRPObj() {
 		checkObjectIsDisplayed(ERP);
 	}
-	
-	
-	//SELECTION GROUPS PAGE OBJECTS
-	public void selection_Groups_trainAndDev(){
+
+	// SELECTION GROUPS PAGE OBJECTS
+	public void selection_Groups_trainAndDev() {
 		checkObjectIsDisplayed(TRARINGANDDEVLOPMENT);
-		assertTrue(verifyText(TRARINGANDDEVLOPMENT, groupSelection_TrainingAndDev,CONTAINS));	
+		assertTrue(verifyText(TRARINGANDDEVLOPMENT, groupSelection_TrainingAndDev, CONTAINS));
 	}
-	
-	public void selection_Groups_coreRecruitment(){
+
+	public void selection_Groups_coreRecruitment() {
 		checkObjectIsDisplayed(CORERECRUITMENT);
-		assertTrue(verifyText(CORERECRUITMENT, groupSelection_coreRecruitment,CONTAINS));	
+		assertTrue(verifyText(CORERECRUITMENT, groupSelection_coreRecruitment, CONTAINS));
 	}
-	
-	public void selection_Groups_Recognition(){
+
+	public void selection_Groups_Recognition() {
 		checkObjectIsDisplayed(RECOGNITION);
-		assertTrue(verifyText(RECOGNITION, groupSelection_Recognition,CONTAINS));
+		assertTrue(verifyText(RECOGNITION, groupSelection_Recognition, CONTAINS));
 	}
-	
-	public void selection_Groups_onBoard(){
+
+	public void selection_Groups_onBoard() {
 		checkObjectIsDisplayed(ONBOARDING);
-		assertTrue(verifyText(ONBOARDING, groupSelection_OnBoarding,CONTAINS));
+		assertTrue(verifyText(ONBOARDING, groupSelection_OnBoarding, CONTAINS));
 	}
-	
-	//Scoping system objects
-	
-	
-	public void scopeRecruitmentPagelableVerify(){
+
+	// Scoping system objects
+
+	public void scopeRecruitmentPagelableVerify() {
 		checkObjectIsDisplayed(SCOPINGRECRITMENTHEADING);
-		verifyText(SCOPINGRECRITMENTHEADING, expectedScopingSystem_Heading,CONTAINS);
+		verifyText(SCOPINGRECRITMENTHEADING, expectedScopingSystem_Heading, CONTAINS);
 	}
-	
-	public void payroll(){
+
+	public void payroll() {
 		checkObjectIsDisplayed(PAYROLL);
-		assertTrue(verifyText(PAYROLL, expected_payroll,CONTAINS));	
+		assertTrue(verifyText(PAYROLL, expected_payroll, CONTAINS));
 	}
-	
-	public void executiveearch(){
+
+	public void executiveearch() {
 		checkObjectIsDisplayed(EXECUTIVESEARCH);
-		assertTrue(verifyText(EXECUTIVESEARCH, expected_executive_Search,CONTAINS));	
+		assertTrue(verifyText(EXECUTIVESEARCH, expected_executive_Search, CONTAINS));
 	}
-	
-	//Candidate Management objects
-		
-	public void candidateManagement(){
+
+	// Candidate Management objects
+
+	public void candidateManagement() {
 		checkObjectIsDisplayed(CANDIDATEMANAGEMENT);
-		assertTrue(verifyText(CANDIDATEMANAGEMENT, expected_CandidateManagement,CONTAINS));	
+		assertTrue(verifyText(CANDIDATEMANAGEMENT, expected_CandidateManagement, CONTAINS));
 	}
-	
-	public void clientportal(){
+
+	public void clientportal() {
 		checkObjectIsDisplayed(CLIENTPORTAL);
-		assertTrue(verifyText(CLIENTPORTAL, expected_Client_portal,CONTAINS));	
+		assertTrue(verifyText(CLIENTPORTAL, expected_Client_portal, CONTAINS));
 	}
-	
-	//Sunburst objects
-	
-	
-	public void sunburstPagelableVerify(){
+
+	// Sunburst objects
+
+	public void sunburstPagelableVerify() {
 		checkObjectIsDisplayed(SURNHEADING);
-		verifyText(SURNHEADING, expected_Sunburst_Heading,CONTAINS);
+		verifyText(SURNHEADING, expected_Sunburst_Heading, CONTAINS);
 	}
-	
-	
-	public void peerInsights(){
+
+	public void peerInsights() {
 		checkObjectIsDisplayed(PEERINSIGHTS);
-		assertTrue(verifyText(PEERINSIGHTS, expected_PeerInsights,CONTAINS));	
+		assertTrue(verifyText(PEERINSIGHTS, expected_PeerInsights, CONTAINS));
 	}
-	
-	public void yourProject(){
+
+	public void yourProject() {
 		checkObjectIsDisplayed(YOURPROJECT);
-		assertTrue(verifyText(YOURPROJECT, expected_YourProject,CONTAINS));	
+		assertTrue(verifyText(YOURPROJECT, expected_YourProject, CONTAINS));
 	}
-	
-	//Treemap objects
-	
-	
-	public void treeMapPagelableVerify(){
+
+	// Treemap objects
+
+	public void treeMapPagelableVerify() {
 		checkObjectIsDisplayed(TREEMAPHEADING);
-		verifyText(TREEMAPHEADING, expected_Treemap_Heading,CONTAINS);
+		verifyText(TREEMAPHEADING, expected_Treemap_Heading, CONTAINS);
 	}
-	
-	
-	public void peerData(){
+
+	public void peerData() {
 		checkObjectIsDisplayed(PEERDATA);
-		assertTrue(verifyText(PEERDATA, expected_Peerdata,CONTAINS));	
+		assertTrue(verifyText(PEERDATA, expected_Peerdata, CONTAINS));
 	}
-	
-	public void Projectdata(){
+
+	public void Projectdata() {
 		checkObjectIsDisplayed(PROJECTDATA);
-		assertTrue(verifyText(PROJECTDATA, expected_ProjectData,CONTAINS));	
+		assertTrue(verifyText(PROJECTDATA, expected_ProjectData, CONTAINS));
 	}
-	
-	
-	//Benefit analyser objects
-	
-	
-	public void benefitsAnalyserPagelableVerify(){
+
+	// Benefit analyser objects
+
+	public void benefitsAnalyserPagelableVerify() {
 		checkObjectIsDisplayed(BENEFITSANALYSERHEADING);
-		verifyText(BENEFITSANALYSERHEADING, expected_Benefits_Analyser,CONTAINS);
+		verifyText(BENEFITSANALYSERHEADING, expected_Benefits_Analyser, CONTAINS);
 	}
-	
-	
-	public void category(){
+
+	public void category() {
 		checkObjectIsDisplayed(CATEGORY);
-		assertTrue(verifyText(CATEGORY, expected_Category,CONTAINS));	
+		assertTrue(verifyText(CATEGORY, expected_Category, CONTAINS));
 	}
-	
-	public void feature(){
+
+	public void feature() {
 		checkObjectIsDisplayed(FEATURE);
-		assertTrue(verifyText(FEATURE, expected_feature,CONTAINS));	
-	
+		assertTrue(verifyText(FEATURE, expected_feature, CONTAINS));
+
 	}
-	
-	//Scope Analysis objects
-	
-	public void metricFeature(){
+
+	// Scope Analysis objects
+
+	public void metricFeature() {
 		checkObjectIsDisplayed(METRICFEATURE);
-		verifyText(METRICFEATURE, expected_MetricAndfeature,CONTAINS);
+		verifyText(METRICFEATURE, expected_MetricAndfeature, CONTAINS);
 	}
-	
-	
-	public void peerIntel(){
+
+	public void peerIntel() {
 		checkObjectIsDisplayed(PEERINTEL);
-		assertTrue(verifyText(PEERINTEL, expected_Peer_intel,CONTAINS));	
+		assertTrue(verifyText(PEERINTEL, expected_Peer_intel, CONTAINS));
 	}
-	
-	//SCOPE EDITOR objects
-	
-	
-	public void scopEditorPagelableVerify(){
+
+	// SCOPE EDITOR objects
+
+	public void scopEditorPagelableVerify() {
 		checkObjectIsDisplayed(SCOPEEDITOR);
-		verifyText(SCOPEEDITOR, expected_SCOPE_EDITOR,CONTAINS);
+		verifyText(SCOPEEDITOR, expected_SCOPE_EDITOR, CONTAINS);
+	}
+
+	public void settings() {
+		checkObjectIsDisplayed(YOURSETTINGS);
+		assertTrue(verifyText(YOURSETTINGS, expected_YOUR_SETTINGS, CONTAINS));
+	}
+
+	// SCOPING objects
+
+	public void groupedObject() {
+		checkObjectIsDisplayed(GROUPED);
+	}
+
+	public void stackedObject() {
+		checkObjectIsDisplayed(STACKED);
+	}
+
+	// Risk & mgt & viz objects
+
+	public void riskPageHeading() {
+		checkObjectIsDisplayed(RISKPAGEHEADING);
+		assertTrue(verifyText(RISKPAGEHEADING, expected_Risk_mgt_Risks, CONTAINS));
+	}
+
+	public void identifyRisk() {
+		checkObjectIsDisplayed(IDENTIFYRISKS);
+		assertTrue(verifyText(IDENTIFYRISKS, expected__Risk_mgt_IDENTIFY_RISKS, CONTAINS));
+	}
+
+	public void riskChart() {
+		checkObjectIsDisplayed(RISKCHART);
+		assertTrue(verifyText(RISKCHART, expected__Risk_mgt_Risk_Chart, CONTAINS));
+	}
+
+	// Dates & Milestones
+
+	public void milestonesObject() {
+		checkObjectIsDisplayed(MILESTONES);
+	}
+
+	public void keyProjectDatestObject() {
+		checkObjectIsDisplayed(KEYPROJECTDATES);
+	}
+
+	// Specification
+
+	public void specification_candidateManagement() {
+		checkObjectIsDisplayed(CANDIDATEMANAGEMENT);
+	}
+
+	public void specification_coreRecruitment() {
+		checkObjectIsDisplayed(CORERECRUITMENT);
+	}
+
+	// EoI Invite objects
+
+	public void eoiPageHeading() {
+		checkObjectIsDisplayed(EOIINVITEPAGEHEADING);
+		assertTrue(verifyText(EOIINVITEPAGEHEADING, expected_eoi_pageHeading, CONTAINS));
+	}
+
+	public void eoi_logo() {
+		checkObjectIsDisplayed(LOGO);
+	}
+
+	public void eoi_details() {
+		checkObjectIsDisplayed(DETAILS);
+	}
+
+	// EoI Result objects
+
+	public void eoiResultPageHeading() {
+		checkObjectIsDisplayed(EOIRESULTEPAGEHEADING);
+		assertTrue(verifyText(EOIRESULTEPAGEHEADING, expected_EOI_RESULT_HEADING, CONTAINS));
+	}
+
+	public void eoiSummary() {
+		checkObjectIsDisplayed(EXECUTIVESUMMARY);
+		assertTrue(verifyText(EXECUTIVESUMMARY, expected_EOI_RESULT_SUMMARY, CONTAINS));
+	}
+
+	// rfq Email objects
+
+	public void rfqEmailPageHeading() {
+		checkObjectIsDisplayed(RFQEMAILPAGEHEADING);
+		assertTrue(verifyText(RFQEMAILPAGEHEADING, expected_RFQ_EMAIL_HEADING, CONTAINS));
+	}
+
+	public void rfqEmailFitScore() {
+		checkObjectIsDisplayed(RFQSYSTEMFIT);
+		assertTrue(verifyText(RFQSYSTEMFIT, expected_RFQ_EMAIL_FITSCORE, CONTAINS));
 	}
 	
+	//rfq results objects
 	
-	public void settings(){
-		checkObjectIsDisplayed(YOURSETTINGS);
-		assertTrue(verifyText(YOURSETTINGS, expected_YOUR_SETTINGS,CONTAINS));	
+	
+	public void rfqResultPageHeading(){
+		checkObjectIsDisplayed(RFQRESULTPAGEHEADING);
+		assertTrue(verifyText(RFQRESULTPAGEHEADING, expected_rfq_result_HEADING,CONTAINS));	
+	}
+	
+	public void rfqResulttechFee(){
+	checkObjectIsDisplayed(RFQTECHNOLOGYFEE);
+	assertTrue(verifyText(RFQTECHNOLOGYFEE, expected_rfq_technology_fee,CONTAINS));
 	}
 }

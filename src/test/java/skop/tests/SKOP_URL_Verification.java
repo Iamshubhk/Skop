@@ -390,7 +390,215 @@ public class SKOP_URL_Verification extends TestBase {
 		
 	}
 	
+	@Test(priority=15)
+	public void scoping_Url() throws Throwable {
+		
+		testcasename = "TC_16_URL_SCOPING";
+		extent = getExtent();
+		loggers = startTest(testcasename);
+		
+		CommonObjectsRepo commonOR = new CommonObjectsRepo(driver);
+		String endPoint = getEndPoint(20, 3);
+		URL url = urlbuilder(endPoint);
+
+		loggers.log(Status.INFO, "URL to be navigate: " + url);
+		NavigateTo(url);
+
+		String response = isLinkBroken(url);
+		loggers.log(Status.INFO, "URL response is: " + response);
+
+		loggers.log(Status.INFO, "Verifying the scoping page objects..");
+		commonOR.groupedObject();
+		commonOR.stackedObject();
+		
+		
+	}
 	
+	@Test(priority=16)
+	public void testingProcess_Url() throws Throwable {
+		
+		testcasename = "TC_17_URL_TESTING_PROCESS";
+		extent = getExtent();
+		loggers = startTest(testcasename);
+		
+		CommonObjectsRepo commonOR = new CommonObjectsRepo(driver);
+		String endPoint = getEndPoint(21, 3);
+		URL url = urlbuilder(endPoint);
+
+		loggers.log(Status.INFO, "URL to be navigate: " + url);
+		NavigateTo(url);
+
+		String response = isLinkBroken(url);
+		loggers.log(Status.INFO, "URL response is: " + response);
+
+		loggers.log(Status.INFO, "Verifying the testing process page objects..");
+		commonOR.groupedObject();
+		commonOR.stackedObject();		
+		
+	}
+	
+	@Test(priority=17)
+	public void riskManagment_Url() throws Throwable {
+		
+		testcasename = "TC_18_URL_RISKMANAGMENT";
+		extent = getExtent();
+		loggers = startTest(testcasename);
+		
+		CommonObjectsRepo commonOR = new CommonObjectsRepo(driver);
+		String endPoint = getEndPoint(22, 3);
+		URL url = urlbuilder(endPoint);
+
+		loggers.log(Status.INFO, "URL to be navigate: " + url);
+		NavigateTo(url);
+
+		String response = isLinkBroken(url);
+		loggers.log(Status.INFO, "URL response is: " + response);
+
+		loggers.log(Status.INFO, "Verifying the risk managment page objects..");
+		commonOR.riskPageHeading();
+		commonOR.identifyRisk();
+		commonOR.riskChart();	
+	}
+	
+	
+	@Test(priority=18)
+	public void timings_Url() throws Throwable {
+		
+		testcasename = "TC_19_URL_TIMINGS";
+		extent = getExtent();
+		loggers = startTest(testcasename);
+		
+		CommonObjectsRepo commonOR = new CommonObjectsRepo(driver);
+		String endPoint = getEndPoint(23, 3);
+		URL url = urlbuilder(endPoint);
+
+		loggers.log(Status.INFO, "URL to be navigate: " + url);
+		NavigateTo(url);
+
+		String response = isLinkBroken(url);
+		loggers.log(Status.INFO, "URL response is: " + response);
+
+		loggers.log(Status.INFO, "Verifying the timings page objects..");
+		commonOR.milestonesObject();
+		commonOR.keyProjectDatestObject();	
+	}
+	
+	@Test(priority=19)
+	public void specification_Url() throws Throwable {
+		
+		testcasename = "TC_20_URL_SPECIFICATION";
+		extent = getExtent();
+		loggers = startTest(testcasename);
+		
+		CommonObjectsRepo commonOR = new CommonObjectsRepo(driver);
+		String endPoint = getEndPoint(24, 3);
+		URL url = urlbuilder(endPoint);
+
+		loggers.log(Status.INFO, "URL to be navigate: " + url);
+		NavigateTo(url);
+
+		String response = isLinkBroken(url);
+		loggers.log(Status.INFO, "URL response is: " + response);
+
+		loggers.log(Status.INFO, "Verifying the specification page objects..");
+		dismissAlert();
+		commonOR.specification_candidateManagement();
+		commonOR.specification_coreRecruitment();	
+	}
+	
+	@Test(priority=20)
+	public void eoiInvite_Url() throws Throwable {
+		
+		testcasename = "TC_21_URL_EOI_INVITE";
+		extent = getExtent();
+		loggers = startTest(testcasename);
+		
+		CommonObjectsRepo commonOR = new CommonObjectsRepo(driver);
+		String endPoint = getEndPoint(25, 3);
+		URL url = urlbuilder(endPoint);
+
+		loggers.log(Status.INFO, "URL to be navigate: " + url);
+		NavigateTo(url);
+
+		String response = isLinkBroken(url);
+		loggers.log(Status.INFO, "URL response is: " + response);
+
+		loggers.log(Status.INFO, "Verifying the EOI invite page objects..");
+		commonOR.eoiPageHeading();
+		commonOR.eoi_logo();	
+		commonOR.eoi_details();
+	}
+	
+	@Test(priority=21)
+	public void eoiResultUrl() throws Throwable {
+		
+		testcasename = "TC_22_URL_EOI_RESULT";
+		extent = getExtent();
+		loggers = startTest(testcasename);
+		
+		CommonObjectsRepo commonOR = new CommonObjectsRepo(driver);
+		String endPoint = getEndPoint(26, 3);
+		URL url = urlbuilder(endPoint);
+
+		loggers.log(Status.INFO, "URL to be navigate: " + url);
+		NavigateTo(url);
+
+		String response = isLinkBroken(url);
+		loggers.log(Status.INFO, "URL response is: " + response);
+
+		loggers.log(Status.INFO, "Verifying the EOI result page objects..");
+		commonOR.eoiResultPageHeading();
+		commonOR.eoiSummary();	
+	
+	}
+	
+	
+	
+	@Test(priority=22)
+	public void rfqEmailUrl() throws Throwable {
+		
+		testcasename = "TC_23_URL_rfq_Email";
+		extent = getExtent();
+		loggers = startTest(testcasename);
+		
+		CommonObjectsRepo commonOR = new CommonObjectsRepo(driver);
+		String endPoint = getEndPoint(27, 3);
+		URL url = urlbuilder(endPoint);
+
+		loggers.log(Status.INFO, "URL to be navigate: " + url);
+		NavigateTo(url);
+
+		String response = isLinkBroken(url);
+		loggers.log(Status.INFO, "URL response is: " + response);
+
+		loggers.log(Status.INFO, "Verifying the rfq Email page objects..");
+		commonOR.rfqEmailFitScore();
+		commonOR.rfqEmailFitScore();	
+	
+	}
+	
+	@Test(priority=23)
+	public void rfqResultsUrl() throws Throwable {
+		
+		testcasename = "TC_24_URL_RFQ_RESULT";
+		extent = getExtent();
+		loggers = startTest(testcasename);
+		
+		CommonObjectsRepo commonOR = new CommonObjectsRepo(driver);
+		String endPoint = getEndPoint(28, 3);
+		URL url = urlbuilder(endPoint);
+
+		loggers.log(Status.INFO, "URL to be navigate: " + url);
+		NavigateTo(url);
+
+		String response = isLinkBroken(url);
+		loggers.log(Status.INFO, "URL response is: " + response);
+
+		loggers.log(Status.INFO, "Verifying the rfq result page objects..");
+		commonOR.rfqResultPageHeading();
+		commonOR.rfqResulttechFee();	
+	
+	}
 	
 	
 	

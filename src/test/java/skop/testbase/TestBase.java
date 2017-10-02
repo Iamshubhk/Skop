@@ -11,6 +11,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -133,6 +134,7 @@ public class TestBase extends ActionsUtility {
 	}
 
 	public void NavigateTo(URL Url) {
+		System.out.println("Navigating on this URL: "+Url);
 		driver.navigate().to(Url);
 	}
 	
@@ -223,6 +225,39 @@ public class TestBase extends ActionsUtility {
 		} while (!elementIsDisplayed && count++ < NUMBER_OF_WAITS);
 
 	}
+	
+	/**
+     * Switches to an alert on screen and accept it
+     * @param params Nothing is expected
+     */
+    public void acceptAlert() {
+
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, 2);
+            wait.until(ExpectedConditions.alertIsPresent());
+
+            Alert alert = driver.switchTo().alert();
+            alert.accept();
+        } catch (Exception e) {
+        	e.printStackTrace();
+        }
+    }
+    
+    /**
+     * Switches to an alert on screen and dismiss it
+     * @param params Nothing is expected
+     */
+    public void dismissAlert() {
+
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, 2);
+            wait.until(ExpectedConditions.alertIsPresent());
+            Alert alert = driver.switchTo().alert();
+            alert.dismiss();
+        } catch (Exception e) {
+        	e.printStackTrace();
+        }
+    }
 
 	public void mouseOverToElement(WebDriver driver, WebElement element) {
 		try {
